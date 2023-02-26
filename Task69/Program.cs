@@ -11,10 +11,10 @@ int n = Convert.ToInt32(Console.ReadLine());
 AkkermanFunction(m,n);
 void AkkermanFunction(int m, int n)
 {
-    Console.Write(Akkerman(m, n)); 
+    Console.Write(ack(m, n)); 
 }
 
-int Akkerman(int m, int n)
+int ack(int m, int n)
 {
     if (m == 0)
     {
@@ -22,10 +22,10 @@ int Akkerman(int m, int n)
     }
     else if (n == 0)
     {
-        return Akkerman(m - 1, 1);
+        return ack(m - 1, 1);
     }
     else
     {
-        return (Akkerman(m - 1, Akkerman(m, n - 1)));
+        return (ack(m - 1, ack(m, n - 1)));
     }
 }
